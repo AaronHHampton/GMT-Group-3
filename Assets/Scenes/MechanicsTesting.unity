@@ -309,19 +309,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
+    key2: {r: 1, g: 0, b: 0, a: 0}
+    key3: {r: 1, g: 1, b: 0, a: 0}
+    key4: {r: 0, g: 1, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
+    ctime1: 131
+    ctime2: 6554
+    ctime3: 45875
+    ctime4: 65535
     ctime5: 0
     ctime6: 0
     ctime7: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 2
+    m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   fill: {fileID: 1073145516}
 --- !u!1 &116607437
@@ -662,7 +662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &489115959
 RectTransform:
   m_ObjectHideFlags: 0
@@ -828,19 +828,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
+    key2: {r: 1, g: 0, b: 0, a: 0}
+    key3: {r: 1, g: 1, b: 0, a: 0}
+    key4: {r: 0, g: 1, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
+    ctime1: 131
+    ctime2: 6554
+    ctime3: 45875
+    ctime4: 65535
     ctime5: 0
     ctime6: 0
     ctime7: 0
@@ -854,7 +854,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 2
+    m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   fill: {fileID: 1566366474}
 --- !u!1 &778793361
@@ -925,7 +925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &790505745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1265,7 +1265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1073145514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1476,24 +1476,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1229432123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1608bb4c783aef41aacc82ac4063d17, type: 3}
+  m_Script: {fileID: 11500000, guid: be5a77f64c6a6ac4b82b756cb5d71012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
+    key2: {r: 1, g: 0, b: 0, a: 0}
+    key3: {r: 1, g: 1, b: 0, a: 0}
+    key4: {r: 0, g: 1, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
+    ctime1: 131
+    ctime2: 6554
+    ctime3: 45875
+    ctime4: 65535
     ctime5: 0
     ctime6: 0
     ctime7: 0
@@ -1507,7 +1507,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 2
+    m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   fill: {fileID: 1259096338}
 --- !u!1 &1259096335
@@ -1528,7 +1528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1259096336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1727,8 +1727,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiInventory: {fileID: 0}
   maxTorsoHealth: 20
+  maxHeadHealth: 8
+  maxLeftArmHealth: 10
+  maxRightArmHealth: 10
+  maxLeftLegHealth: 15
+  maxRightLegHealth: 15
   currentTorsoHealth: 0
-  torsoHealth: {fileID: 0}
+  currentHeadHealth: 0
+  currentLeftArmHealth: 0
+  currentRightArmHealth: 0
+  currentLeftLegHealth: 0
+  currentRightLegHealth: 0
+  torsoHealth: {fileID: 161579637}
+  headHealth: {fileID: 18361882}
+  leftArmHealth: {fileID: 494163548}
+  rightArmHealth: {fileID: 1436007604}
+  leftLegHealth: {fileID: 2142047007}
+  rightLegHealth: {fileID: 1229432125}
 --- !u!1 &1396107324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,24 +2000,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1436007602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1608bb4c783aef41aacc82ac4063d17, type: 3}
+  m_Script: {fileID: 11500000, guid: f5be7321238e27f45bcbb3a5796392dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
+    key2: {r: 1, g: 0, b: 0, a: 0}
+    key3: {r: 1, g: 1, b: 0, a: 0}
+    key4: {r: 0, g: 1, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
+    ctime1: 131
+    ctime2: 6554
+    ctime3: 45875
+    ctime4: 65535
     ctime5: 0
     ctime6: 0
     ctime7: 0
@@ -2016,7 +2031,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 2
+    m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   fill: {fileID: 489115961}
 --- !u!1 &1566366471
@@ -2037,7 +2052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1566366472
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2112,7 +2127,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1566366474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2612,7 +2627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1865368785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2714,18 +2729,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0055e8488b9eaea47b6a5a76ff422fb9, type: 3}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 161579634}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
         m_MethodName: 
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1 &1888992243
 GameObject:
   m_ObjectHideFlags: 0
@@ -3033,8 +3048,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiInventory: {fileID: 1115955788}
   maxTorsoHealth: 20
+  maxHeadHealth: 8
+  maxLeftArmHealth: 10
+  maxRightArmHealth: 10
+  maxLeftLegHealth: 15
+  maxRightLegHealth: 15
   currentTorsoHealth: 0
+  currentHeadHealth: 0
+  currentLeftArmHealth: 0
+  currentRightArmHealth: 0
+  currentLeftLegHealth: 0
+  currentRightLegHealth: 0
   torsoHealth: {fileID: 161579637}
+  headHealth: {fileID: 18361882}
+  leftArmHealth: {fileID: 494163548}
+  rightArmHealth: {fileID: 1436007604}
+  leftLegHealth: {fileID: 2142047007}
+  rightLegHealth: {fileID: 1229432125}
 --- !u!4 &1987786940
 Transform:
   m_ObjectHideFlags: 0
@@ -3178,24 +3208,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2142047005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1608bb4c783aef41aacc82ac4063d17, type: 3}
+  m_Script: {fileID: 11500000, guid: 49339b878afd62d43b758a9c8812eb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
+    key2: {r: 1, g: 0, b: 0, a: 0}
+    key3: {r: 1, g: 1, b: 0, a: 0}
+    key4: {r: 0, g: 1, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
+    ctime1: 131
+    ctime2: 6554
+    ctime3: 45875
+    ctime4: 65535
     ctime5: 0
     ctime6: 0
     ctime7: 0
@@ -3209,7 +3239,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 2
+    m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   fill: {fileID: 790505747}
 --- !u!1660057539 &9223372036854775807

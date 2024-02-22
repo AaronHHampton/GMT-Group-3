@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-
+        
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             TakeHeadDamage(2);
@@ -94,7 +94,7 @@ public class Enemy : MonoBehaviour
         {
             TakeRightLegDamage(2);
         }
-
+        
     }
 
 

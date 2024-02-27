@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -65,35 +66,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            TakeHeadDamage(2);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            TakeTorsoDamage(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            TakeLeftArmDamage(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad4))
-        {
-            TakeRightArmDamage(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad5))
-        {
-            TakeLeftLegDamage(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad6))
-        {
-            TakeRightLegDamage(2);
-        }
 
     }
 

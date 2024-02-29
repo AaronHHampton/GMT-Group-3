@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
     public LeftLegHealth leftLegHealth;
     public RightLegHealth rightLegHealth;
 
+    [SerializeField]
+    private GameObject[] partsArray;
+
     /*
     private void Awake()
     {
@@ -65,79 +68,85 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            TakeHeadDamage(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            TakeTorsoDamage(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            TakeLeftArmDamage(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            TakeRightArmDamage(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            TakeLeftLegDamage(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            TakeRightLegDamage(2);
-        }
-        
     }
 
 
-    void TakeTorsoDamage(int damage)
+    public void TakeTorsoDamage(int damage)
     {
         currentTorsoHealth -= damage;
 
         torsoHealth.SetTorsoHealth(currentTorsoHealth, maxTorsoHealth);
+
+        if (currentTorsoHealth <= 0)
+        {
+            DisablePart(1);
+        }
     }
 
-    void TakeHeadDamage(int damage)
+    public void TakeHeadDamage(int damage)
     {
         currentHeadHealth -= damage;
 
         headHealth.SetHeadHealth(currentHeadHealth, maxHeadHealth);
+
+        if (currentHeadHealth <= 0)
+        {
+            DisablePart(0);
+        }
     }
 
-    void TakeLeftLegDamage(int damage)
+    public void TakeLeftLegDamage(int damage)
     {
         currentLeftLegHealth -= damage;
 
         leftLegHealth.SetLeftLegHealth(currentLeftLegHealth, maxLeftLegHealth);
+
+        if (currentLeftLegHealth <= 0)
+        {
+            DisablePart(4);
+        }
     }
 
-    void TakeRightLegDamage(int damage)
+    public void TakeRightLegDamage(int damage)
     {
         currentRightLegHealth -= damage;
 
         rightLegHealth.SetRightLegHealth(currentRightLegHealth, maxRightLegHealth);
+
+        if (currentRightLegHealth <= 0)
+        {
+            DisablePart(5);
+        }
     }
 
-    void TakeLeftArmDamage(int damage)
+    public void TakeLeftArmDamage(int damage)
     {
         currentLeftArmHealth -= damage;
 
         leftArmHealth.SetLeftArmHealth(currentLeftArmHealth, maxLeftArmHealth);
+
+        if (currentLeftArmHealth <= 0)
+        {
+            DisablePart(2);
+        }
     }
 
-    void TakeRightArmDamage(int damage)
+    public void TakeRightArmDamage(int damage)
     {
         currentRightArmHealth -= damage;
 
         rightArmHealth.SetRightArmHealth(currentRightArmHealth, maxRightArmHealth);
+
+        if (currentRightArmHealth <= 0)
+        {
+            DisablePart(3);
+        }
+    }
+
+    public void DisablePart(int part)
+    {
+        partsArray[part].SetActive(false);
+        Debug.Log("Disabled");
     }
 
 }

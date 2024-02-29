@@ -8,7 +8,7 @@ public class LeftArmHealth : MonoBehaviour
 {
 
     public Gradient gradient;
-    public Image fill;
+    public SpriteRenderer fill;
 
     private float leftArmColor;
 

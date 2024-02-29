@@ -8,7 +8,7 @@ public class TorsoHealth : MonoBehaviour
 {
 
     public Gradient gradient;
-    public Image fill;
+    public SpriteRenderer fill;
 
     private float torsoColor;
 

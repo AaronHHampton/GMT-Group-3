@@ -8,7 +8,7 @@ public class StartButton : MonoBehaviour
     public void StartGame()
     {
 
-        Loader.Load(Loader.Scene.MechanicsTesting);
+        Loader.Load(Loader.Scene.BoxColliderTesting);
 
     }
 

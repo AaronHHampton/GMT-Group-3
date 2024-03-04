@@ -12,6 +12,7 @@ public static class Loader
     public enum Scene
     {
         StartScreen,
+        BoxColliderTesting,
         MechanicsTesting,
         Loading,
     }

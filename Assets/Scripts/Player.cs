@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
     }
 
     
-    public void TakeTorsoDamage(int damage)
+    public void PlayerTakeTorsoDamage(int damage)
     {
         currentTorsoHealth -= damage;
 
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeHeadDamage(int damage)
+    public void PlayerTakeHeadDamage(int damage)
     {
         currentHeadHealth -= damage;
 
@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeLeftLegDamage(int damage)
+    public void PlayerTakeLeftLegDamage(int damage)
     {
         currentLeftLegHealth -= damage;
 
@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeRightLegDamage(int damage)
+    public void PlayerTakeRightLegDamage(int damage)
     {
         currentRightLegHealth -= damage;
 
@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeLeftArmDamage(int damage)
+    public void PlayerTakeLeftArmDamage(int damage)
     {
         currentLeftArmHealth -= damage;
 
@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeRightArmDamage(int damage)
+    public void PlayerTakeRightArmDamage(int damage)
     {
         currentRightArmHealth -= damage;
 

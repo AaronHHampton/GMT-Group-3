@@ -676,6 +676,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &614990786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 614990788}
+  - component: {fileID: 614990787}
+  m_Layer: 0
+  m_Name: InputHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &614990787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614990786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ada4fed1c2b7fb41ac5be0002f6a0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1801517226}
+  _enemy: {fileID: 2004895528}
+  PlayerTurn: 0
+  _turn: {fileID: 782260683}
+--- !u!4 &614990788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614990786}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9377685, y: 0.9127843, z: -0.32555214}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782260681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1420,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2884813982224843432, guid: 3eb81697b3b0b9c44a4858a1b93897aa, type: 3}
   m_PrefabInstance: {fileID: 218886396}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1801517226 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5591812090623750797, guid: 2a87fca9fc1d4ac458dfa1ebd6f38742, type: 3}
+  m_PrefabInstance: {fileID: 2675845667106513929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0055e8488b9eaea47b6a5a76ff422fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1972068611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,6 +1506,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972068611}
   m_CullTransparentMesh: 1
+--- !u!114 &2004895528 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1973707401028427002, guid: cc5d673c9f8b27f4c936f14236bbbef1, type: 3}
+  m_PrefabInstance: {fileID: 6963737258748942239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89bbe8d44dfc3f478cb63cd16d729d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2021077907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1790,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2012454966563659458, guid: cc5d673c9f8b27f4c936f14236bbbef1, type: 3}
+      propertyPath: m_Name
+      value: EnemyTorsoHitbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413018182849285163, guid: cc5d673c9f8b27f4c936f14236bbbef1, type: 3}
+      propertyPath: m_Name
+      value: EnemyRightLegHitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 2898247891439456621, guid: cc5d673c9f8b27f4c936f14236bbbef1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -1760,13 +1838,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3685166392453383216, guid: cc5d673c9f8b27f4c936f14236bbbef1, type: 3}
+      propertyPath: m_Name
+      value: EnemyRightArmHitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5843496575703992085, guid: cc5d673c9f8b27f4c936f14236bbbef1, type: 3}
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7741805830074501447, guid: cc5d673c9f8b27f4c936f14236bbbef1, type: 3}
+      propertyPath: m_Name
+      value: EnemyLeftLegHitbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018083931401162814, guid: cc5d673c9f8b27f4c936f14236bbbef1, type: 3}
+      propertyPath: m_Name
+      value: EnemyHeadHitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 9018083931401162814, guid: cc5d673c9f8b27f4c936f14236bbbef1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210481001011123477, guid: cc5d673c9f8b27f4c936f14236bbbef1, type: 3}
+      propertyPath: m_Name
+      value: EnemyLeftArmHitbox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1783,3 +1877,4 @@ SceneRoots:
   - {fileID: 6963737258748942239}
   - {fileID: 2021077911}
   - {fileID: 1641327814}
+  - {fileID: 614990788}

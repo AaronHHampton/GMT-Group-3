@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     public RightLegHealth rightLegHealth;
 
     [SerializeField]
-    private GameObject[] partsArray;
+    public GameObject[] partsArray;
 
     /*
     private void Awake()

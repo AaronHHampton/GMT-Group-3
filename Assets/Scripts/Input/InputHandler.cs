@@ -18,6 +18,8 @@ public class InputHandler : MonoBehaviour
 
     public TMP_Text _turn;
 
+    public GameplayHandler _handler;
+
     private void Awake()
     {
         _mainCamera = Camera.main;
@@ -31,6 +33,7 @@ public class InputHandler : MonoBehaviour
         Debug.Log("Done Waiting!");
         PlayerTurn = true;
         _turn.text = "Player's Turn";
+        _handler.enemyHasShotThisTurn = false;
     }
 
     private void Update()

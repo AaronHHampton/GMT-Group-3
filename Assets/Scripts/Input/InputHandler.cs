@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
@@ -11,16 +11,28 @@ public class InputHandler : MonoBehaviour
     public Player _player;
     public Enemy _enemy;
 
+    private Vector3 mousePosition;
+
     private void Awake()
     {
         _mainCamera = Camera.main;
     }
 
-    public void OnClick(InputAction.CallbackContext context)
+    private void Update()
     {
-        if (!context.started) return;
+        if (Input.GetButtonDown("Fire1")) {
+            OnClick();
+        }
+    }
 
-        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
+    public void OnClick()
+    {
+
+        mousePosition = Input.mousePosition;
+
+        //if (!context.started) return;
+
+        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(mousePosition));
         if (!rayHit.collider) return;
 
         Debug.Log(rayHit.collider.gameObject.name);

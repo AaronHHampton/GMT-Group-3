@@ -1,34 +1,5 @@
 {
     "name": "PlayerInput",
-    "maps": [
-        {
-            "name": "Gameplay",
-            "id": "e7733d20-1eaf-42b9-a074-1a8bafc79288",
-            "actions": [
-                {
-                    "name": "Click",
-                    "type": "Button",
-                    "id": "e2131108-6d30-404b-a891-5637bf318613",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "8eff1592-fe22-4d18-a891-e2b9139076a7",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Click",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        }
-    ],
+    "maps": [],
     "controlSchemes": []
 }

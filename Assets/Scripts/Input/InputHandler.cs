@@ -20,6 +20,8 @@ public class InputHandler : MonoBehaviour
 
     public GameplayHandler _handler;
 
+    //public EnemyHeadArt enemyHeadArt;
+
     private void Awake()
     {
         _mainCamera = Camera.main;
@@ -38,9 +40,86 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
+        HoveringOver();
+
         if (Input.GetButtonDown("Fire1")) {
             OnClick();
         }
+
+
+    }
+
+    public void HoveringOver()
+    {
+        mousePosition = Input.mousePosition;
+
+        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(mousePosition));
+        if (!rayHit.collider) return;
+
+        Debug.Log(rayHit.collider.gameObject.name);
+
+        if (rayHit.collider.gameObject.name == "EnemyHeadHitbox")
+        {
+            //rayHit.collider.gameObject.name;
+            _enemy.EnablePart(6);
+        }
+        else
+        {
+            _enemy.DisablePart(6);
+        }
+
+        if (rayHit.collider.gameObject.name == "EnemyTorsoHitbox")
+        {
+            //rayHit.collider.gameObject.name;
+            _enemy.EnablePart(7);
+        }
+        else
+        {
+            _enemy.DisablePart(7);
+        }
+
+        if (rayHit.collider.gameObject.name == "EnemyLeftArmHitbox")
+        {
+            //rayHit.collider.gameObject.name;
+            _enemy.EnablePart(8);
+        }
+        else
+        {
+            _enemy.DisablePart(8);
+        }
+
+        if (rayHit.collider.gameObject.name == "EnemyRightArmHitbox")
+        {
+            //rayHit.collider.gameObject.name;
+            _enemy.EnablePart(9);
+        }
+        else
+        {
+            _enemy.DisablePart(9);
+        }
+
+        if (rayHit.collider.gameObject.name == "EnemyLeftLegHitbox")
+        {
+            //rayHit.collider.gameObject.name;
+            _enemy.EnablePart(10);
+        }
+        else
+        {
+            _enemy.DisablePart(10);
+        }
+
+        if (rayHit.collider.gameObject.name == "EnemyRightLegHitbox")
+        {
+            //rayHit.collider.gameObject.name;
+            _enemy.EnablePart(11);
+        }
+        else
+        {
+            _enemy.DisablePart(11);
+        }
+
+        //if (!rayHit.collider) return;
+
     }
 
     public void OnClick()

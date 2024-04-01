@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private GameObject[] partsArray;
+    //private GameObject[] healthDisplayArray;
 
     /*
     private void Awake()
@@ -146,7 +147,13 @@ public class Enemy : MonoBehaviour
     public void DisablePart(int part)
     {
         partsArray[part].SetActive(false);
-        Debug.Log("Disabled");
+        Debug.Log($"Disabled {part}");
+    }
+
+    public void EnablePart(int part)
+    {
+        partsArray[part].SetActive(true);
+        Debug.Log($"Enabled {part}");
     }
 
 }

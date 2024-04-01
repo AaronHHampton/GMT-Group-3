@@ -147,7 +147,7 @@ public class Enemy : MonoBehaviour
     public void DisablePart(int part)
     {
         partsArray[part].SetActive(false);
-        Debug.Log($"Disabled {part}");
+        //Debug.Log($"Disabled {part}");
     }
 
     public void EnablePart(int part)

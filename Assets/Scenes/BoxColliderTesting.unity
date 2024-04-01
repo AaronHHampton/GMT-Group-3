@@ -1508,7 +1508,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputHandler: {fileID: 614990787}
   player: {fileID: 1801517226}
+  _enemy: {fileID: 2004895528}
+  _turn: {fileID: 782260683}
   enemyHasShotThisTurn: 0
+  playerVictory: 0
+  playerDefeat: 0
 --- !u!1 &1972068611
 GameObject:
   m_ObjectHideFlags: 0

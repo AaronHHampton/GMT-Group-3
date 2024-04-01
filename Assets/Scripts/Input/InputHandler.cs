@@ -40,12 +40,12 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
-        HoveringOver();
-
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonDown("Fire1"))
+        {
             OnClick();
         }
 
+        HoveringOver();
 
     }
 

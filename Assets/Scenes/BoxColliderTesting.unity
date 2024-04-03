@@ -1513,6 +1513,7 @@ MonoBehaviour:
   enemyHasShotThisTurn: 0
   playerVictory: 0
   playerDefeat: 0
+  mainMenuButton: {fileID: 2021077908}
 --- !u!1 &1972068611
 GameObject:
   m_ObjectHideFlags: 0

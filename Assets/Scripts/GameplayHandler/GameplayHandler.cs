@@ -19,12 +19,22 @@ public class GameplayHandler : MonoBehaviour
     public bool playerVictory;
     public bool playerDefeat;
 
+    public MainMenuButton mainMenuButton;
+
     // Start is called before the first frame update
     void Start()
     {
         enemyHasShotThisTurn = false;
         playerVictory = false;
         playerDefeat = false;
+    }
+
+    IEnumerator ReturnToTitle()
+    {
+        yield return new WaitForSeconds(5);
+        Debug.Log("Done Waiting!");
+        mainMenuButton.MainMenu();
+
     }
 
     // Update is called once per frame
@@ -81,18 +91,20 @@ public class GameplayHandler : MonoBehaviour
             //}
         }
 
-        if (_enemy.currentHeadHealth <= 0 || _enemy.currentTorsoHealth <= 0 || _enemy.currentLeftLegHealth <= 0 || _enemy.currentRightLegHealth <= 0)
+        if (_enemy.currentHeadHealth <= 0 || _enemy.currentTorsoHealth <= 0 || _enemy.currentLeftLegHealth <= 0 && _enemy.currentRightLegHealth <= 0)
         {
             playerVictory = true;
             _turn.text = "Victory!";
             Debug.Log("Victory!");
+            StartCoroutine(ReturnToTitle());
         }
 
-        if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 || player.currentRightLegHealth <= 0)
+        if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0)
         {
             playerDefeat = true;
             _turn.text = "Defeat!";
             Debug.Log("Defeat!");
+            StartCoroutine(ReturnToTitle());
         }
     }
 }

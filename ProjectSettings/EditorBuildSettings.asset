@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BoxColliderTesting.unity
     guid: bbb55c7c188b78f45936ca3202db93d5
+  - enabled: 1
+    path: Assets/Scenes/FirstCombat.unity
+    guid: 621de5b92bbb557478a0d8130c3c5abc
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: de6f0196ebadd214ebbd7cb33872012f, type: 2}

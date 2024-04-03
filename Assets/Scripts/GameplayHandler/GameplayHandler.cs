@@ -14,6 +14,7 @@ public class GameplayHandler : MonoBehaviour
     public Enemy _enemy;
 
     public TMP_Text _turn;
+    public TMP_Text _combatLog;
 
     public bool enemyHasShotThisTurn;
     public bool playerVictory;
@@ -32,7 +33,7 @@ public class GameplayHandler : MonoBehaviour
     IEnumerator ReturnToTitle()
     {
         yield return new WaitForSeconds(5);
-        Debug.Log("Done Waiting!");
+        Debug.Log("Ready to return to title!");
         mainMenuButton.MainMenu();
 
     }
@@ -51,6 +52,7 @@ public class GameplayHandler : MonoBehaviour
                     player.PlayerTakeHeadDamage(2);
                     enemyHasShotThisTurn = true;
                     Debug.Log("Enemy Has Shot Your Head!");
+                    _combatLog.text = "Enemy Has Shot Your Head!";
                     //i++;
                 }
                 if (randomNumber == 2 && player.partsArray[1].activeInHierarchy == true)
@@ -58,6 +60,7 @@ public class GameplayHandler : MonoBehaviour
                     player.PlayerTakeTorsoDamage(2);
                     enemyHasShotThisTurn = true;
                 Debug.Log("Enemy Has Shot Your Torso!");
+                _combatLog.text = "Enemy Has Shot Your Torso!";
                 //i++;
             }
                 if (randomNumber == 3 && player.partsArray[2].activeInHierarchy == true)
@@ -65,6 +68,7 @@ public class GameplayHandler : MonoBehaviour
                     player.PlayerTakeLeftArmDamage(2);
                     enemyHasShotThisTurn = true;
                 Debug.Log("Enemy Has Shot Your Left Arm!");
+                _combatLog.text = "Enemy Has Shot Your Left Arm!";
                 //i++;
             }
                 if (randomNumber == 4 && player.partsArray[3].activeInHierarchy == true)
@@ -72,6 +76,7 @@ public class GameplayHandler : MonoBehaviour
                     player.PlayerTakeRightArmDamage(2);
                     enemyHasShotThisTurn = true;
                 Debug.Log("Enemy Has Shot Your Right Arm!");
+                _combatLog.text = "Enemy Has Shot Your Right Arm!";
                 //i++;
             }
                 if (randomNumber == 5 && player.partsArray[4].activeInHierarchy == true)
@@ -79,6 +84,7 @@ public class GameplayHandler : MonoBehaviour
                     player.PlayerTakeLeftLegDamage(2);
                     enemyHasShotThisTurn = true;
                 Debug.Log("Enemy Has Shot Your Left Leg!");
+                _combatLog.text = "Enemy Has Shot Your Left Leg!";
                 //i++;
             }
                 if (randomNumber == 6 && player.partsArray[5].activeInHierarchy == true)
@@ -86,6 +92,7 @@ public class GameplayHandler : MonoBehaviour
                     player.PlayerTakeRightLegDamage(2);
                     enemyHasShotThisTurn = true;
                 Debug.Log("Enemy Has Shot Your Right Leg!");
+                _combatLog.text = "Enemy Has Shot Your Right Leg!";
                 //i++;
             }
             //}

@@ -14,6 +14,7 @@ public static class Loader
         StartScreen,
         BoxColliderTesting,
         MechanicsTesting,
+        FirstCombat,
         Loading,
     }
 

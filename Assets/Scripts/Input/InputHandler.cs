@@ -20,12 +20,21 @@ public class InputHandler : MonoBehaviour
 
     public GameplayHandler _handler;
 
+    public int playerWeaponDamage;
+    public int playerHitChance;
+
+    //public TMP_Text _playerCombatLog;
+
+    //int randomNumber;
+
     //public EnemyHeadArt enemyHeadArt;
 
     private void Awake()
     {
         _mainCamera = Camera.main;
         PlayerTurn = true;
+        playerWeaponDamage = 2;
+        playerHitChance = 45;
         //StartCoroutine(WaitForFunction());
     }
 
@@ -45,11 +54,11 @@ public class InputHandler : MonoBehaviour
             OnClick();
         }
 
-        HoveringOver();
+        //HoveringOver();
 
     }
 
-    public void HoveringOver()
+    /*public void HoveringOver()
     {
         mousePosition = Input.mousePosition;
 
@@ -120,7 +129,7 @@ public class InputHandler : MonoBehaviour
 
         //if (!rayHit.collider) return;
 
-    }
+    }*/
 
     public void OnClick()
     {
@@ -136,7 +145,7 @@ public class InputHandler : MonoBehaviour
 
         if (rayHit.collider.gameObject.name == "EnemyTorsoHitbox" && PlayerTurn == true)
         {
-            _enemy.EnemyTakeTorsoDamage(2);
+            _enemy.EnemyTakeTorsoDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
             _turn.text = "Enemy's Turn";
             //_enemy.ShootBack();
@@ -148,7 +157,7 @@ public class InputHandler : MonoBehaviour
 
         if (rayHit.collider.gameObject.name == "EnemyHeadHitbox" && PlayerTurn == true)
         {
-            _enemy.EnemyTakeHeadDamage(2);
+            _enemy.EnemyTakeHeadDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
             _turn.text = "Enemy's Turn";
             //_enemy.ShootBack();
@@ -160,7 +169,7 @@ public class InputHandler : MonoBehaviour
 
         if (rayHit.collider.gameObject.name == "EnemyLeftArmHitbox" && PlayerTurn == true)
         {
-            _enemy.EnemyTakeLeftArmDamage(2);
+            _enemy.EnemyTakeLeftArmDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
             _turn.text = "Enemy's Turn";
             //_enemy.ShootBack();
@@ -172,7 +181,7 @@ public class InputHandler : MonoBehaviour
 
         if (rayHit.collider.gameObject.name == "EnemyRightArmHitbox" && PlayerTurn == true)
         {
-            _enemy.EnemyTakeRightArmDamage(2);
+            _enemy.EnemyTakeRightArmDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
             _turn.text = "Enemy's Turn";
             //_enemy.ShootBack();
@@ -183,7 +192,7 @@ public class InputHandler : MonoBehaviour
 
         if (rayHit.collider.gameObject.name == "EnemyLeftLegHitbox" && PlayerTurn == true)
         {
-            _enemy.EnemyTakeLeftLegDamage(2);
+            _enemy.EnemyTakeLeftLegDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
             _turn.text = "Enemy's Turn";
             //_enemy.ShootBack();
@@ -194,7 +203,7 @@ public class InputHandler : MonoBehaviour
 
         if (rayHit.collider.gameObject.name == "EnemyRightLegHitbox" && PlayerTurn == true)
         {
-            _enemy.EnemyTakeRightLegDamage(2);
+            _enemy.EnemyTakeRightLegDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
             _turn.text = "Enemy's Turn";
             //_enemy.ShootBack();

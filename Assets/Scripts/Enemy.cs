@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
+using TMPro;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -28,6 +30,10 @@ public class Enemy : MonoBehaviour
     public RightArmHealth rightArmHealth;
     public LeftLegHealth leftLegHealth;
     public RightLegHealth rightLegHealth;
+
+    int randomNumber;
+
+    public TMP_Text _playerCombatLog;
 
     [SerializeField]
     private GameObject[] partsArray;
@@ -72,11 +78,31 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public void EnemyTakeTorsoDamage(int damage)
+    public void EnemyTakeTorsoDamage(int damage, int gunChanceToHit)
     {
-        currentTorsoHealth -= damage;
+        randomNumber = Random.Range(1, 100);
 
-        torsoHealth.SetTorsoHealth(currentTorsoHealth, maxTorsoHealth);
+        //Default chance to hit torso is %45.
+        if (randomNumber <= 45 + gunChanceToHit) 
+        {
+            
+            currentTorsoHealth -= damage;
+            torsoHealth.SetTorsoHealth(currentTorsoHealth, maxTorsoHealth);
+            Debug.Log("Hit Torso!");
+            _playerCombatLog.text = "You Have Hit The Enemy's Torso!";
+
+
+        }
+        else
+        {
+            torsoHealth.SetTorsoHealth(currentTorsoHealth, maxTorsoHealth);
+            Debug.Log("Missed Torso!");
+            _playerCombatLog.text = "You Have Missed The Enemy's Torso!";
+        }
+
+        //currentTorsoHealth -= damage;
+
+        //torsoHealth.SetTorsoHealth(currentTorsoHealth, maxTorsoHealth);
 
         if (currentTorsoHealth <= 0)
         {
@@ -84,11 +110,31 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EnemyTakeHeadDamage(int damage)
+    public void EnemyTakeHeadDamage(int damage, int gunChanceToHit)
     {
-        currentHeadHealth -= damage;
 
-        headHealth.SetHeadHealth(currentHeadHealth, maxHeadHealth);
+        randomNumber = Random.Range(1, 100);
+
+        //Default chance to hit head is %15.
+        if (randomNumber <= 15 + gunChanceToHit)
+        {
+
+            currentHeadHealth -= damage;
+            headHealth.SetHeadHealth(currentHeadHealth, maxHeadHealth);
+            Debug.Log("Hit Head!");
+            _playerCombatLog.text = "You Have Hit The Enemy's Head!";
+
+        }
+        else
+        {
+            headHealth.SetHeadHealth(currentHeadHealth, maxHeadHealth);
+            Debug.Log("Missed Head!");
+            _playerCombatLog.text = "You Have Missed The Enemy's Head!";
+        }
+
+        //currentHeadHealth -= damage;
+
+        //headHealth.SetHeadHealth(currentHeadHealth, maxHeadHealth);
 
         if (currentHeadHealth <= 0)
         {
@@ -96,11 +142,30 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EnemyTakeLeftLegDamage(int damage)
+    public void EnemyTakeLeftLegDamage(int damage, int gunChanceToHit)
     {
-        currentLeftLegHealth -= damage;
+        randomNumber = Random.Range(1, 100);
 
-        leftLegHealth.SetLeftLegHealth(currentLeftLegHealth, maxLeftLegHealth);
+        //Default chance to hit left leg is %30.
+        if (randomNumber <= 30 + gunChanceToHit)
+        {
+
+            currentLeftLegHealth -= damage;
+            leftLegHealth.SetLeftLegHealth(currentLeftLegHealth, maxLeftLegHealth);
+            Debug.Log("Hit Left Leg!");
+            _playerCombatLog.text = "You Have Hit The Enemy's Left Leg!";
+
+        }
+        else
+        {
+            leftLegHealth.SetLeftLegHealth(currentLeftLegHealth, maxLeftLegHealth);
+            Debug.Log("Missed Left Leg!");
+            _playerCombatLog.text = "You Have Missed The Enemy's Left Leg!";
+        }
+
+        //currentLeftLegHealth -= damage;
+
+        //leftLegHealth.SetLeftLegHealth(currentLeftLegHealth, maxLeftLegHealth);
 
         if (currentLeftLegHealth <= 0)
         {
@@ -108,11 +173,31 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EnemyTakeRightLegDamage(int damage)
+    public void EnemyTakeRightLegDamage(int damage, int gunChanceToHit)
     {
-        currentRightLegHealth -= damage;
 
-        rightLegHealth.SetRightLegHealth(currentRightLegHealth, maxRightLegHealth);
+        randomNumber = Random.Range(1, 100);
+
+        //Default chance to hit right leg is %30.
+        if (randomNumber <= 30 + gunChanceToHit)
+        {
+
+            currentRightLegHealth -= damage;
+            rightLegHealth.SetRightLegHealth(currentRightLegHealth, maxRightLegHealth);
+            Debug.Log("Hit Right Leg!");
+            _playerCombatLog.text = "You Have Hit The Enemy's Right Leg!";
+
+        }
+        else
+        {
+            rightLegHealth.SetRightLegHealth(currentRightLegHealth, maxRightLegHealth);
+            Debug.Log("Missed Right Leg!");
+            _playerCombatLog.text = "You Have Missed The Enemy's Right Leg!";
+        }
+
+        //currentRightLegHealth -= damage;
+
+        //rightLegHealth.SetRightLegHealth(currentRightLegHealth, maxRightLegHealth);
 
         if (currentRightLegHealth <= 0)
         {
@@ -120,11 +205,31 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EnemyTakeLeftArmDamage(int damage)
+    public void EnemyTakeLeftArmDamage(int damage, int gunChanceToHit)
     {
-        currentLeftArmHealth -= damage;
 
-        leftArmHealth.SetLeftArmHealth(currentLeftArmHealth, maxLeftArmHealth);
+        randomNumber = Random.Range(1, 100);
+
+        //Default chance to hit left arm is %35.
+        if (randomNumber <= 35 + gunChanceToHit)
+        {
+
+            currentLeftArmHealth -= damage;
+            leftArmHealth.SetLeftArmHealth(currentLeftArmHealth, maxLeftArmHealth);
+            Debug.Log("Hit Left Arm!");
+            _playerCombatLog.text = "You Have Hit The Enemy's Left Arm!";
+
+        }
+        else
+        {
+            leftArmHealth.SetLeftArmHealth(currentLeftArmHealth, maxLeftArmHealth);
+            Debug.Log("Missed Left Arm!");
+            _playerCombatLog.text = "You Have Missed The Enemy's Left Arm!";
+        }
+
+        //currentLeftArmHealth -= damage;
+
+        //leftArmHealth.SetLeftArmHealth(currentLeftArmHealth, maxLeftArmHealth);
 
         if (currentLeftArmHealth <= 0)
         {
@@ -132,11 +237,31 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EnemyTakeRightArmDamage(int damage)
+    public void EnemyTakeRightArmDamage(int damage, int gunChanceToHit)
     {
-        currentRightArmHealth -= damage;
 
-        rightArmHealth.SetRightArmHealth(currentRightArmHealth, maxRightArmHealth);
+        randomNumber = Random.Range(1, 100);
+
+        //Default chance to hit left arm is %35.
+        if (randomNumber <= 35 + gunChanceToHit)
+        {
+
+            currentRightArmHealth -= damage;
+            rightArmHealth.SetRightArmHealth(currentRightArmHealth, maxRightArmHealth);
+            Debug.Log("Hit Right Arm!");
+            _playerCombatLog.text = "You Have Hit The Enemy's Right Arm!";
+
+        }
+        else
+        {
+            rightArmHealth.SetRightArmHealth(currentRightArmHealth, maxRightArmHealth);
+            Debug.Log("Missed Right Arm!");
+            _playerCombatLog.text = "You Have Missed The Enemy's Right Arm!";
+        }
+
+        //currentRightArmHealth -= damage;
+
+        //rightArmHealth.SetRightArmHealth(currentRightArmHealth, maxRightArmHealth);
 
         if (currentRightArmHealth <= 0)
         {

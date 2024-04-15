@@ -106,7 +106,8 @@ public class Enemy : MonoBehaviour
 
         if (currentTorsoHealth <= 0)
         {
-            DisablePart(1);
+            //Disable Visual Enemy Torso art.
+            DisablePart(13);
         }
     }
 
@@ -138,7 +139,8 @@ public class Enemy : MonoBehaviour
 
         if (currentHeadHealth <= 0)
         {
-            DisablePart(0);
+            //Disable Visual Enemy Head art.
+            DisablePart(12);
         }
     }
 
@@ -169,7 +171,8 @@ public class Enemy : MonoBehaviour
 
         if (currentLeftLegHealth <= 0)
         {
-            DisablePart(4);
+            //Disable Visual Enemy Left Leg art.
+            DisablePart(16);
         }
     }
 
@@ -201,7 +204,8 @@ public class Enemy : MonoBehaviour
 
         if (currentRightLegHealth <= 0)
         {
-            DisablePart(5);
+            //Disable Visual Enemy Right Leg art.
+            DisablePart(17);
         }
     }
 
@@ -233,7 +237,8 @@ public class Enemy : MonoBehaviour
 
         if (currentLeftArmHealth <= 0)
         {
-            DisablePart(2);
+            //Disable Visual Enemy Left Arm art.
+            DisablePart(14);
         }
     }
 
@@ -265,7 +270,8 @@ public class Enemy : MonoBehaviour
 
         if (currentRightArmHealth <= 0)
         {
-            DisablePart(3);
+            //Disable Visual Enemy Right Arm art.
+            DisablePart(15);
         }
     }
 

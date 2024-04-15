@@ -143,7 +143,7 @@ public class InputHandler : MonoBehaviour
 
         Debug.Log(rayHit.collider.gameObject.name);
 
-        if (rayHit.collider.gameObject.name == "EnemyTorsoHitbox" && PlayerTurn == true)
+        if (rayHit.collider.gameObject.name == "EnemyTorsoHitbox" && PlayerTurn == true && _enemy.currentTorsoHealth > 0)
         {
             _enemy.EnemyTakeTorsoDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
@@ -155,7 +155,7 @@ public class InputHandler : MonoBehaviour
             //_turn.text = "Player's Turn";
         }
 
-        if (rayHit.collider.gameObject.name == "EnemyHeadHitbox" && PlayerTurn == true)
+        if (rayHit.collider.gameObject.name == "EnemyHeadHitbox" && PlayerTurn == true && _enemy.currentHeadHealth > 0)
         {
             _enemy.EnemyTakeHeadDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
@@ -167,7 +167,7 @@ public class InputHandler : MonoBehaviour
             //_turn.text = "Player's Turn";
         }
 
-        if (rayHit.collider.gameObject.name == "EnemyLeftArmHitbox" && PlayerTurn == true)
+        if (rayHit.collider.gameObject.name == "EnemyLeftArmHitbox" && PlayerTurn == true && _enemy.currentLeftArmHealth > 0)
         {
             _enemy.EnemyTakeLeftArmDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
@@ -179,7 +179,7 @@ public class InputHandler : MonoBehaviour
             //_turn.text = "Player's Turn";
         }
 
-        if (rayHit.collider.gameObject.name == "EnemyRightArmHitbox" && PlayerTurn == true)
+        if (rayHit.collider.gameObject.name == "EnemyRightArmHitbox" && PlayerTurn == true && _enemy.currentRightArmHealth > 0)
         {
             _enemy.EnemyTakeRightArmDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
@@ -190,7 +190,7 @@ public class InputHandler : MonoBehaviour
             //_turn.text = "Player's Turn";
         }
 
-        if (rayHit.collider.gameObject.name == "EnemyLeftLegHitbox" && PlayerTurn == true)
+        if (rayHit.collider.gameObject.name == "EnemyLeftLegHitbox" && PlayerTurn == true && _enemy.currentLeftLegHealth > 0)
         {
             _enemy.EnemyTakeLeftLegDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;
@@ -201,7 +201,7 @@ public class InputHandler : MonoBehaviour
             //_turn.text = "Player's Turn";
         }
 
-        if (rayHit.collider.gameObject.name == "EnemyRightLegHitbox" && PlayerTurn == true)
+        if (rayHit.collider.gameObject.name == "EnemyRightLegHitbox" && PlayerTurn == true && _enemy.currentRightLegHealth > 0)
         {
             _enemy.EnemyTakeRightLegDamage(playerWeaponDamage, playerHitChance);
             PlayerTurn = false;

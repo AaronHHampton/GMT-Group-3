@@ -1897,7 +1897,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 5591812090531304387}
-  _enemy: {fileID: 1973707401905614512}
+  _enemy: {fileID: 0}
+  _secondEnemy: {fileID: 5843496574964151648}
+  _thirdEnemy: {fileID: 0}
   PlayerTurn: 0
   _turn: {fileID: 773636387}
   _handler: {fileID: 1418571711}
@@ -2451,7 +2453,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2693,8 +2695,8 @@ GameObject:
   - component: {fileID: 1354876347}
   - component: {fileID: 1354876346}
   - component: {fileID: 1354876345}
-  - component: {fileID: 1354876350}
   - component: {fileID: 1354876349}
+  - component: {fileID: 1354876350}
   m_Layer: 0
   m_Name: ButtonController
   m_TagString: Untagged
@@ -2762,7 +2764,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1354876344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dda628d327e8b644190b78044dfae05e, type: 3}
+  m_Script: {fileID: 11500000, guid: f98ea61ed4958674f8dfca88189fbfde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1354876350
@@ -2774,7 +2776,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1354876344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98ea61ed4958674f8dfca88189fbfde, type: 3}
+  m_Script: {fileID: 11500000, guid: dda628d327e8b644190b78044dfae05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1377760169
@@ -2941,15 +2943,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputHandler: {fileID: 743399093}
   player: {fileID: 5591812090531304387}
-  _enemy: {fileID: 1973707401905614512}
+  _enemy: {fileID: 0}
+  _secondEnemy: {fileID: 5843496574964151648}
+  _thirdEnemy: {fileID: 0}
   _turn: {fileID: 773636387}
   _enemyCombatLog: {fileID: 847125052}
   enemyHasShotThisTurn: 0
   playerVictory: 0
   playerDefeat: 0
   mainMenuButton: {fileID: 1354876345}
-  secondCombat: {fileID: 1354876350}
-  thirdCombat: {fileID: 1354876349}
+  secondCombat: {fileID: 1354876349}
+  thirdCombat: {fileID: 1354876350}
   enemyWeaponDamage: 0
   enemyHitChance: 0
 --- !u!4 &1418571712
@@ -4932,56 +4936,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3281224359456460058}
   m_CullTransparentMesh: 1
---- !u!114 &1973707401905614512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5843496574964151647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f89bbe8d44dfc3f478cb63cd16d729d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTorsoHealth: 20
-  maxHeadHealth: 8
-  maxLeftArmHealth: 10
-  maxRightArmHealth: 10
-  maxLeftLegHealth: 15
-  maxRightLegHealth: 15
-  currentTorsoHealth: 0
-  currentHeadHealth: 0
-  currentLeftArmHealth: 0
-  currentRightArmHealth: 0
-  currentLeftLegHealth: 0
-  currentRightLegHealth: 0
-  torsoHealth: {fileID: 4310261836693328461}
-  headHealth: {fileID: 9205892845209781338}
-  leftArmHealth: {fileID: 7035738145949540401}
-  rightArmHealth: {fileID: 5159337202432312723}
-  leftLegHealth: {fileID: 7049981267392545357}
-  rightLegHealth: {fileID: 3911481648353028976}
-  _playerCombatLog: {fileID: 116889534}
-  partsArray:
-  - {fileID: 9018083930501046900}
-  - {fileID: 2012454967452904584}
-  - {fileID: 9210480999710844767}
-  - {fileID: 3685166393883047546}
-  - {fileID: 7741805828643814157}
-  - {fileID: 2413018184248802913}
-  - {fileID: 1431156300877147392}
-  - {fileID: 1413282837878861001}
-  - {fileID: 7850010201298856785}
-  - {fileID: 6228637953871246630}
-  - {fileID: 4560237726200054610}
-  - {fileID: 522612284551646659}
-  - {fileID: 6480822788812880051}
-  - {fileID: 6201366514923395546}
-  - {fileID: 8849940020727883088}
-  - {fileID: 571102801882769707}
-  - {fileID: 6839530741985838299}
-  - {fileID: 8216680429728874664}
 --- !u!1 &2012454967452904584
 GameObject:
   m_ObjectHideFlags: 0
@@ -6634,7 +6588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2898247892873077543}
-  - component: {fileID: 1973707401905614512}
+  - component: {fileID: 5843496574964151648}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -6642,6 +6596,56 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5843496574964151648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5843496574964151647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e67da8ea635a0d43911d91b05904347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTorsoHealth: 20
+  maxHeadHealth: 8
+  maxLeftArmHealth: 10
+  maxRightArmHealth: 10
+  maxLeftLegHealth: 15
+  maxRightLegHealth: 15
+  currentTorsoHealth: 0
+  currentHeadHealth: 0
+  currentLeftArmHealth: 0
+  currentRightArmHealth: 0
+  currentLeftLegHealth: 0
+  currentRightLegHealth: 0
+  torsoHealth: {fileID: 4310261836693328461}
+  headHealth: {fileID: 9205892845209781338}
+  leftArmHealth: {fileID: 7035738145949540401}
+  rightArmHealth: {fileID: 5159337202432312723}
+  leftLegHealth: {fileID: 7049981267392545357}
+  rightLegHealth: {fileID: 3911481648353028976}
+  _playerCombatLog: {fileID: 116889534}
+  partsArray:
+  - {fileID: 9018083930501046900}
+  - {fileID: 2012454967452904584}
+  - {fileID: 9210480999710844767}
+  - {fileID: 3685166393883047546}
+  - {fileID: 7741805828643814157}
+  - {fileID: 2413018184248802913}
+  - {fileID: 1431156300877147392}
+  - {fileID: 1413282837878861001}
+  - {fileID: 7850010201298856785}
+  - {fileID: 6228637953871246630}
+  - {fileID: 4560237726200054610}
+  - {fileID: 522612284551646659}
+  - {fileID: 6480822788812880051}
+  - {fileID: 6201366514923395546}
+  - {fileID: 8849940020727883088}
+  - {fileID: 571102801882769707}
+  - {fileID: 6839530741985838299}
+  - {fileID: 8216680429728874664}
 --- !u!114 &5860844038369547484
 MonoBehaviour:
   m_ObjectHideFlags: 0

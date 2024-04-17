@@ -52,22 +52,22 @@ public class Player : MonoBehaviour
     {
 
         currentTorsoHealth = maxTorsoHealth;
-        torsoHealth.SetTorsoStartColor();
+        torsoHealth.SetTorsoStartColor(currentTorsoHealth, maxTorsoHealth);
 
         currentHeadHealth = maxHeadHealth;
-        headHealth.SetHeadStartColor();
+        headHealth.SetHeadStartColor(currentHeadHealth, maxHeadHealth);
 
         currentLeftArmHealth = maxLeftArmHealth;
-        leftArmHealth.SetLeftArmStartColor();
+        leftArmHealth.SetLeftArmStartColor(currentLeftArmHealth, maxLeftArmHealth);
 
         currentRightArmHealth = maxRightArmHealth;
-        rightArmHealth.SetRightArmStartColor();
+        rightArmHealth.SetRightArmStartColor(currentRightArmHealth, maxRightArmHealth);
 
         currentLeftLegHealth = maxLeftLegHealth;
-        leftLegHealth.SetLeftLegStartColor();
+        leftLegHealth.SetLeftLegStartColor(currentLeftLegHealth, maxLeftLegHealth);
 
         currentRightLegHealth = maxRightLegHealth;
-        rightLegHealth.SetRightLegStartColor();
+        rightLegHealth.SetRightLegStartColor(currentRightLegHealth, maxRightLegHealth);
 
     }
 
@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
 
         if (currentTorsoHealth <= 0)
         {
-            DisablePart(1);
+            //DisablePart(1);
         }
     }
 
@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
 
         if (currentHeadHealth <= 0)
         {
-            DisablePart(0);
+            //DisablePart(0);
         }
     }
 
@@ -172,7 +172,7 @@ public class Player : MonoBehaviour
 
         if (currentLeftLegHealth <= 0)
         {
-            DisablePart(4);
+            //DisablePart(4);
         }
     }
 
@@ -204,7 +204,7 @@ public class Player : MonoBehaviour
 
         if (currentRightLegHealth <= 0)
         {
-            DisablePart(5);
+            //DisablePart(5);
         }
     }
 
@@ -236,7 +236,7 @@ public class Player : MonoBehaviour
 
         if (currentLeftArmHealth <= 0)
         {
-            DisablePart(2);
+            //DisablePart(2);
         }
     }
 
@@ -268,7 +268,7 @@ public class Player : MonoBehaviour
 
         if (currentRightArmHealth <= 0)
         {
-            DisablePart(3);
+            //DisablePart(3);
         }
     }
 

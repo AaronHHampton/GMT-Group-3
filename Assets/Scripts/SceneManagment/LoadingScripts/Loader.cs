@@ -15,6 +15,8 @@ public static class Loader
         BoxColliderTesting,
         MechanicsTesting,
         FirstCombat,
+        SecondCombat,
+        ThirdCombat,
         Loading,
     }
 

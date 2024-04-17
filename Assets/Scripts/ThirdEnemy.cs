@@ -4,7 +4,7 @@ using System.Runtime.ExceptionServices;
 using TMPro;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class ThirdEnemy : MonoBehaviour
 {
     //[SerializeField] private UI_Inventory uiInventory;
 
@@ -52,22 +52,22 @@ public class Enemy : MonoBehaviour
     void Start()
     {
 
-        currentTorsoHealth = 17;
+        currentTorsoHealth = maxTorsoHealth;
         torsoHealth.SetTorsoStartColor(currentTorsoHealth, maxTorsoHealth);
 
-        currentHeadHealth = 7;
+        currentHeadHealth = maxHeadHealth;
         headHealth.SetHeadStartColor(currentHeadHealth, maxHeadHealth);
 
-        currentLeftArmHealth = 6;
+        currentLeftArmHealth = maxLeftArmHealth;
         leftArmHealth.SetLeftArmStartColor(currentLeftArmHealth, maxLeftArmHealth);
 
         currentRightArmHealth = maxRightArmHealth;
         rightArmHealth.SetRightArmStartColor(currentRightArmHealth, maxRightArmHealth);
 
-        currentLeftLegHealth = 10;
+        currentLeftLegHealth = maxLeftLegHealth;
         leftLegHealth.SetLeftLegStartColor(currentLeftLegHealth, maxLeftLegHealth);
 
-        currentRightLegHealth = 0;
+        currentRightLegHealth = maxRightLegHealth;
         rightLegHealth.SetRightLegStartColor(currentRightLegHealth, maxRightLegHealth);
 
     }

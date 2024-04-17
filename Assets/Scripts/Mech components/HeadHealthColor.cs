@@ -12,9 +12,9 @@ public class HeadHealth : MonoBehaviour
 
     private float headColor;
 
-    public void SetHeadStartColor()
+    public void SetHeadStartColor(float StartingHealth, float MaxHealth)
     {
-        fill.color = gradient.Evaluate(1f);
+        fill.color = gradient.Evaluate(StartingHealth / MaxHealth);
     }
 
     public void SetHeadHealth(float headHealth, float maxHeadHealth)

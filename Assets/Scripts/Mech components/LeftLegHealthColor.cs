@@ -12,9 +12,9 @@ public class LeftLegHealth : MonoBehaviour
 
     private float leftLegColor;
 
-    public void SetLeftLegStartColor()
+    public void SetLeftLegStartColor(float StartingHealth, float MaxHealth)
     {
-        fill.color = gradient.Evaluate(1f);
+        fill.color = gradient.Evaluate(StartingHealth / MaxHealth);
     }
 
     public void SetLeftLegHealth(float leftLegHealth, float maxLeftLegHealth)

@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameplayHandler : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class GameplayHandler : MonoBehaviour
     public InputHandler InputHandler;
     public Player player;
     public Enemy _enemy;
+    public SecondEnemy _secondEnemy;
+    public ThirdEnemy _thirdEnemy;
 
     public TMP_Text _turn;
     public TMP_Text _enemyCombatLog;
@@ -22,6 +26,8 @@ public class GameplayHandler : MonoBehaviour
     public bool playerDefeat;
 
     public MainMenuButton mainMenuButton;
+    public SecondCombatTransition secondCombat;
+    public ThirdCombatTransition thirdCombat;
 
     public int enemyWeaponDamage;
     public int enemyHitChance;
@@ -29,20 +35,36 @@ public class GameplayHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+
         enemyHasShotThisTurn = false;
         playerVictory = false;
         playerDefeat = false;
-        enemyWeaponDamage = 2;
-        enemyHitChance = 45;
-        _enemyCombatLog.text = "The Enemy Is Using A Machine Gun!";
 
-        /*enemyWeaponDamage = 10;
-        enemyHitChance = 5;
-        _enemyCombatLog.text = "The Enemy Is Using A Battle Cannon!";*/
+        if (sceneName == "FirstCombat")
+        {
+            enemyWeaponDamage = 2;
+            enemyHitChance = 45;
+            _enemyCombatLog.text = "The Enemy Is Using A Machine Gun!";
+        }
 
-        /*enemyWeaponDamage = 5;
-        enemyHitChance = 25;
-        _enemyCombatLog.text = "The Enemy Is Using An Auto Cannon!";*/
+        if (sceneName == "SecondCombat")
+        {
+            enemyWeaponDamage = 10;
+            enemyHitChance = 5;
+            _enemyCombatLog.text = "The Enemy Is Using A Battle Cannon!";
+        }
+        
+        if (sceneName == "ThirdCombat")
+        {
+            enemyWeaponDamage = 5;
+            enemyHitChance = 25;
+            _enemyCombatLog.text = "The Enemy Is Using An Auto Cannon!";
+        }
     }
 
     IEnumerator ReturnToTitle()
@@ -53,9 +75,31 @@ public class GameplayHandler : MonoBehaviour
 
     }
 
+    IEnumerator FirstCombatVictory()
+    {
+        yield return new WaitForSeconds(5);
+        Debug.Log("Ready to start Second Combat!");
+        secondCombat.StartSecondCombat();
+
+    }
+
+    IEnumerator SecondCombatVictory()
+    {
+        yield return new WaitForSeconds(5);
+        Debug.Log("Ready to start Third Combat!");
+        thirdCombat.StartThirdCombat();
+
+    }
+
     // Update is called once per frame
     void Update()
     {
+
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
 
         if (InputHandler.PlayerTurn == false && enemyHasShotThisTurn == false)
         {
@@ -114,20 +158,62 @@ public class GameplayHandler : MonoBehaviour
             //}
         }
 
-        if (_enemy.currentHeadHealth <= 0 || _enemy.currentTorsoHealth <= 0 || _enemy.currentLeftLegHealth <= 0 && _enemy.currentRightLegHealth <= 0)
+        if (sceneName == "FirstCombat")
         {
-            playerVictory = true;
-            _turn.text = "Victory!";
-            Debug.Log("Victory!");
-            StartCoroutine(ReturnToTitle());
+
+            if (_enemy.currentHeadHealth <= 0 || _enemy.currentTorsoHealth <= 0 || _enemy.currentLeftLegHealth <= 0 && _enemy.currentRightLegHealth <= 0)
+            {
+                playerVictory = true;
+                _turn.text = "Victory!";
+                Debug.Log("Victory!");
+                StartCoroutine(FirstCombatVictory());
+            }
+
+            if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0)
+            {
+                playerDefeat = true;
+                _turn.text = "Defeat!";
+                Debug.Log("Defeat!");
+                StartCoroutine(ReturnToTitle());
+            }
         }
 
-        if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0)
+        if (sceneName == "SecondCombat")
         {
-            playerDefeat = true;
-            _turn.text = "Defeat!";
-            Debug.Log("Defeat!");
-            StartCoroutine(ReturnToTitle());
+            if (_secondEnemy.currentHeadHealth <= 0 || _secondEnemy.currentTorsoHealth <= 0 || _secondEnemy.currentLeftLegHealth <= 0 && _secondEnemy.currentRightLegHealth <= 0)
+            {
+                playerVictory = true;
+                _turn.text = "Victory!";
+                Debug.Log("Victory!");
+                StartCoroutine(SecondCombatVictory());
+            }
+
+            if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0)
+            {
+                playerDefeat = true;
+                _turn.text = "Defeat!";
+                Debug.Log("Defeat!");
+                StartCoroutine(ReturnToTitle());
+            }
+        }
+
+        if (sceneName == "ThirdCombat")
+        {
+            if (_thirdEnemy.currentHeadHealth <= 0 || _thirdEnemy.currentTorsoHealth <= 0 || _thirdEnemy.currentLeftLegHealth <= 0 && _thirdEnemy.currentRightLegHealth <= 0)
+            {
+                playerVictory = true;
+                _turn.text = "Victory!";
+                Debug.Log("Victory!");
+                StartCoroutine(ReturnToTitle());
+            }
+
+            if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0)
+            {
+                playerDefeat = true;
+                _turn.text = "Defeat!";
+                Debug.Log("Defeat!");
+                StartCoroutine(ReturnToTitle());
+            }
         }
     }
 }

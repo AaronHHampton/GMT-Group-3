@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 //using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
@@ -11,6 +12,8 @@ public class InputHandler : MonoBehaviour
 
     public Player _player;
     public Enemy _enemy;
+    public SecondEnemy _secondEnemy;
+    public ThirdEnemy _thirdEnemy;
 
     public bool PlayerTurn;
 
@@ -143,73 +146,226 @@ public class InputHandler : MonoBehaviour
 
         Debug.Log(rayHit.collider.gameObject.name);
 
-        if (rayHit.collider.gameObject.name == "EnemyTorsoHitbox" && PlayerTurn == true && _enemy.currentTorsoHealth > 0)
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+
+        if (sceneName == "FirstCombat")
         {
-            _enemy.EnemyTakeTorsoDamage(playerWeaponDamage, playerHitChance);
-            PlayerTurn = false;
-            _turn.text = "Enemy's Turn";
-            //_enemy.ShootBack();
-            //yield return new WaitForSeconds(1);
-            StartCoroutine(WaitForFunction());
-            //PlayerTurn = true;
-            //_turn.text = "Player's Turn";
+            if (rayHit.collider.gameObject.name == "EnemyTorsoHitbox" && PlayerTurn == true && _enemy.currentTorsoHealth > 0)
+            {
+                _enemy.EnemyTakeTorsoDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                //yield return new WaitForSeconds(1);
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyHeadHitbox" && PlayerTurn == true && _enemy.currentHeadHealth > 0)
+            {
+                _enemy.EnemyTakeHeadDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                //yield return new WaitForSeconds(1);
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyLeftArmHitbox" && PlayerTurn == true && _enemy.currentLeftArmHealth > 0)
+            {
+                _enemy.EnemyTakeLeftArmDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                //yield return new WaitForSeconds(1);
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyRightArmHitbox" && PlayerTurn == true && _enemy.currentRightArmHealth > 0)
+            {
+                _enemy.EnemyTakeRightArmDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyLeftLegHitbox" && PlayerTurn == true && _enemy.currentLeftLegHealth > 0)
+            {
+                _enemy.EnemyTakeLeftLegDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyRightLegHitbox" && PlayerTurn == true && _enemy.currentRightLegHealth > 0)
+            {
+                _enemy.EnemyTakeRightLegDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
         }
 
-        if (rayHit.collider.gameObject.name == "EnemyHeadHitbox" && PlayerTurn == true && _enemy.currentHeadHealth > 0)
+        if (sceneName == "SecondCombat")
         {
-            _enemy.EnemyTakeHeadDamage(playerWeaponDamage, playerHitChance);
-            PlayerTurn = false;
-            _turn.text = "Enemy's Turn";
-            //_enemy.ShootBack();
-            //yield return new WaitForSeconds(1);
-            StartCoroutine(WaitForFunction());
-            //PlayerTurn = true;
-            //_turn.text = "Player's Turn";
+            if (rayHit.collider.gameObject.name == "EnemyTorsoHitbox" && PlayerTurn == true && _secondEnemy.currentTorsoHealth > 0)
+            {
+                _secondEnemy.EnemyTakeTorsoDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                //yield return new WaitForSeconds(1);
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyHeadHitbox" && PlayerTurn == true && _secondEnemy.currentHeadHealth > 0)
+            {
+                _secondEnemy.EnemyTakeHeadDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                //yield return new WaitForSeconds(1);
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyLeftArmHitbox" && PlayerTurn == true && _secondEnemy.currentLeftArmHealth > 0)
+            {
+                _secondEnemy.EnemyTakeLeftArmDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                //yield return new WaitForSeconds(1);
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyRightArmHitbox" && PlayerTurn == true && _secondEnemy.currentRightArmHealth > 0)
+            {
+                _secondEnemy.EnemyTakeRightArmDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyLeftLegHitbox" && PlayerTurn == true && _secondEnemy.currentLeftLegHealth > 0)
+            {
+                _secondEnemy.EnemyTakeLeftLegDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyRightLegHitbox" && PlayerTurn == true && _secondEnemy.currentRightLegHealth > 0)
+            {
+                _secondEnemy.EnemyTakeRightLegDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
         }
 
-        if (rayHit.collider.gameObject.name == "EnemyLeftArmHitbox" && PlayerTurn == true && _enemy.currentLeftArmHealth > 0)
+        if (sceneName == "ThirdCombat")
         {
-            _enemy.EnemyTakeLeftArmDamage(playerWeaponDamage, playerHitChance);
-            PlayerTurn = false;
-            _turn.text = "Enemy's Turn";
-            //_enemy.ShootBack();
-            //yield return new WaitForSeconds(1);
-            StartCoroutine(WaitForFunction());
-            //PlayerTurn = true;
-            //_turn.text = "Player's Turn";
-        }
+            if (rayHit.collider.gameObject.name == "EnemyTorsoHitbox" && PlayerTurn == true && _thirdEnemy.currentTorsoHealth > 0)
+            {
+                _thirdEnemy.EnemyTakeTorsoDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                //yield return new WaitForSeconds(1);
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
 
-        if (rayHit.collider.gameObject.name == "EnemyRightArmHitbox" && PlayerTurn == true && _enemy.currentRightArmHealth > 0)
-        {
-            _enemy.EnemyTakeRightArmDamage(playerWeaponDamage, playerHitChance);
-            PlayerTurn = false;
-            _turn.text = "Enemy's Turn";
-            //_enemy.ShootBack();
-            StartCoroutine(WaitForFunction());
-            //PlayerTurn = true;
-            //_turn.text = "Player's Turn";
-        }
+            if (rayHit.collider.gameObject.name == "EnemyHeadHitbox" && PlayerTurn == true && _thirdEnemy.currentHeadHealth > 0)
+            {
+                _thirdEnemy.EnemyTakeHeadDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                //yield return new WaitForSeconds(1);
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
 
-        if (rayHit.collider.gameObject.name == "EnemyLeftLegHitbox" && PlayerTurn == true && _enemy.currentLeftLegHealth > 0)
-        {
-            _enemy.EnemyTakeLeftLegDamage(playerWeaponDamage, playerHitChance);
-            PlayerTurn = false;
-            _turn.text = "Enemy's Turn";
-            //_enemy.ShootBack();
-            StartCoroutine(WaitForFunction());
-            //PlayerTurn = true;
-            //_turn.text = "Player's Turn";
-        }
+            if (rayHit.collider.gameObject.name == "EnemyLeftArmHitbox" && PlayerTurn == true && _thirdEnemy.currentLeftArmHealth > 0)
+            {
+                _thirdEnemy.EnemyTakeLeftArmDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                //yield return new WaitForSeconds(1);
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
 
-        if (rayHit.collider.gameObject.name == "EnemyRightLegHitbox" && PlayerTurn == true && _enemy.currentRightLegHealth > 0)
-        {
-            _enemy.EnemyTakeRightLegDamage(playerWeaponDamage, playerHitChance);
-            PlayerTurn = false;
-            _turn.text = "Enemy's Turn";
-            //_enemy.ShootBack();
-            StartCoroutine(WaitForFunction());
-            //PlayerTurn = true;
-            //_turn.text = "Player's Turn";
+            if (rayHit.collider.gameObject.name == "EnemyRightArmHitbox" && PlayerTurn == true && _thirdEnemy.currentRightArmHealth > 0)
+            {
+                _thirdEnemy.EnemyTakeRightArmDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyLeftLegHitbox" && PlayerTurn == true && _thirdEnemy.currentLeftLegHealth > 0)
+            {
+                _thirdEnemy.EnemyTakeLeftLegDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
+
+            if (rayHit.collider.gameObject.name == "EnemyRightLegHitbox" && PlayerTurn == true && _thirdEnemy.currentRightLegHealth > 0)
+            {
+                _thirdEnemy.EnemyTakeRightLegDamage(playerWeaponDamage, playerHitChance);
+                PlayerTurn = false;
+                _turn.text = "Enemy's Turn";
+                //_enemy.ShootBack();
+                StartCoroutine(WaitForFunction());
+                //PlayerTurn = true;
+                //_turn.text = "Player's Turn";
+            }
         }
     }
 

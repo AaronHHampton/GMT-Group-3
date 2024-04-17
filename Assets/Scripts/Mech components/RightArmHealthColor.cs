@@ -12,9 +12,9 @@ public class RightArmHealth : MonoBehaviour
 
     private float rightArmColor;
 
-    public void SetRightArmStartColor()
+    public void SetRightArmStartColor(float StartingHealth, float MaxHealth)
     {
-        fill.color = gradient.Evaluate(1f);
+        fill.color = gradient.Evaluate(StartingHealth / MaxHealth);
     }
 
     public void SetRightArmHealth(float rightArmHealth, float maxrightArmHealth)

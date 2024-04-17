@@ -12,9 +12,9 @@ public class TorsoHealth : MonoBehaviour
 
     private float torsoColor;
 
-    public void SetTorsoStartColor()
+    public void SetTorsoStartColor(float StartingHealth, float MaxHealth)
     {
-        fill.color = gradient.Evaluate(1f);
+        fill.color = gradient.Evaluate(StartingHealth / MaxHealth);
     }
 
     public void SetTorsoHealth(float torsoHealth, float maxTorsoHealth)

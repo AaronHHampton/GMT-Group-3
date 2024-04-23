@@ -21,6 +21,42 @@ public class InputHandler : MonoBehaviour
 
     public TMP_Text _turn;
 
+    public TMP_Text _headHitChance;
+    public TMP_Text _torsoHitChance;
+    public TMP_Text _leftArmHitChance;
+    public TMP_Text _rightArmHitChance;
+    public TMP_Text _leftLegHitChance;
+    public TMP_Text _rightLegHitChance;
+
+    public TMP_Text _1stenemyCurrentHeadHealth;
+    public TMP_Text _1stenemyCurrentTorsoHealth;
+    public TMP_Text _1stenemyCurrentLeftArmHealth;
+    public TMP_Text _1stenemyCurrentRightArmHealth;
+    public TMP_Text _1stenemyCurrentLeftLegHealth;
+    public TMP_Text _1stenemyCurrentRightLegHealth;
+
+    public TMP_Text _2ndenemyCurrentHeadHealth;
+    public TMP_Text _2ndenemyCurrentTorsoHealth;
+    public TMP_Text _2ndenemyCurrentLeftArmHealth;
+    public TMP_Text _2ndenemyCurrentRightArmHealth;
+    public TMP_Text _2ndenemyCurrentLeftLegHealth;
+    public TMP_Text _2ndenemyCurrentRightLegHealth;
+
+    public TMP_Text _3rdenemyCurrentHeadHealth;
+    public TMP_Text _3rdenemyCurrentTorsoHealth;
+    public TMP_Text _3rdenemyCurrentLeftArmHealth;
+    public TMP_Text _3rdenemyCurrentRightArmHealth;
+    public TMP_Text _3rdenemyCurrentLeftLegHealth;
+    public TMP_Text _3rdenemyCurrentRightLegHealth;
+
+    public TMP_Text _playerCurrentHeadHealth;
+    public TMP_Text _playerCurrentTorsoHealth;
+    public TMP_Text _playerCurrentLeftArmHealth;
+    public TMP_Text _playerCurrentRightArmHealth;
+    public TMP_Text _playerCurrentLeftLegHealth;
+    public TMP_Text _playerCurrentRightLegHealth;
+
+
     public GameplayHandler _handler;
 
     public int playerWeaponDamage;
@@ -52,9 +88,64 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+
         if (Input.GetButtonDown("Fire1"))
         {
             OnClick();
+        }
+
+        _headHitChance.text = (playerHitChance + 5).ToString() + "%";
+        _torsoHitChance.text = (playerHitChance + 45).ToString() + "%";
+        _leftArmHitChance.text = (playerHitChance + 35).ToString() + "%";
+        _rightArmHitChance.text = (playerHitChance + 35).ToString() + "%";
+        _leftLegHitChance.text = (playerHitChance + 30).ToString() + "%";
+        _rightLegHitChance.text = (playerHitChance + 30).ToString() + "%";
+
+        _playerCurrentHeadHealth.text = _player.currentHeadHealth.ToString() + " / " + _player.maxHeadHealth.ToString();
+        _playerCurrentTorsoHealth.text = _player.currentTorsoHealth.ToString() + " / 20";
+        _playerCurrentLeftArmHealth.text = _player.currentLeftArmHealth.ToString() + " / 10";
+        _playerCurrentRightArmHealth.text = _player.currentRightArmHealth.ToString() + " / 10";
+        _playerCurrentLeftLegHealth.text = _player.currentLeftLegHealth.ToString() + " / 15";
+        _playerCurrentRightLegHealth.text = _player.currentRightLegHealth.ToString() + " / 15";
+
+
+        if (sceneName == "FirstCombat")
+        {
+
+            _1stenemyCurrentHeadHealth.text = _enemy.currentHeadHealth.ToString() + " / 8";
+            _1stenemyCurrentTorsoHealth.text = _enemy.currentTorsoHealth.ToString() + " / 20";
+            _1stenemyCurrentLeftArmHealth.text = _enemy.currentLeftArmHealth.ToString() + " / 10";
+            _1stenemyCurrentRightArmHealth.text = _enemy.currentRightArmHealth.ToString() + " / 10";
+            _1stenemyCurrentLeftLegHealth.text = _enemy.currentLeftLegHealth.ToString() + " / 15";
+            _1stenemyCurrentRightLegHealth.text = _enemy.currentRightLegHealth.ToString() + " / 15";
+
+        }
+
+        if (sceneName == "SecondCombat")
+        {
+
+            _2ndenemyCurrentHeadHealth.text = _secondEnemy.currentHeadHealth.ToString() + " / 8";
+            _2ndenemyCurrentTorsoHealth.text = _secondEnemy.currentTorsoHealth.ToString() + " / 20";
+            _2ndenemyCurrentLeftArmHealth.text = _secondEnemy.currentLeftArmHealth.ToString() + " / 10";
+            _2ndenemyCurrentRightArmHealth.text = _secondEnemy.currentRightArmHealth.ToString() + " / 10";
+            _2ndenemyCurrentLeftLegHealth.text = _secondEnemy.currentLeftLegHealth.ToString() + " / 15";
+            _2ndenemyCurrentRightLegHealth.text = _secondEnemy.currentRightLegHealth.ToString() + " / 15";
+
+        }
+
+        if (sceneName == "ThirdCombat")
+        {
+            _3rdenemyCurrentHeadHealth.text = _thirdEnemy.currentHeadHealth.ToString() + " / 8";
+            _3rdenemyCurrentTorsoHealth.text = _thirdEnemy.currentTorsoHealth.ToString() + " / 20";
+            _3rdenemyCurrentLeftArmHealth.text = _thirdEnemy.currentLeftArmHealth.ToString() + " / 10";
+            _3rdenemyCurrentRightArmHealth.text = _thirdEnemy.currentRightArmHealth.ToString() + " / 10";
+            _3rdenemyCurrentLeftLegHealth.text = _thirdEnemy.currentLeftLegHealth.ToString() + " / 15";
+            _3rdenemyCurrentRightLegHealth.text = _thirdEnemy.currentRightLegHealth.ToString() + " / 15";
         }
 
         //HoveringOver();

@@ -117,8 +117,8 @@ public class Player : MonoBehaviour
 
         randomNumber = Random.Range(1, 100);
 
-        //Default chance to hit head is %15.
-        if (randomNumber <= 15 + enemyHitChance)
+        //Default chance to hit head is %5.
+        if (randomNumber <= 5 + enemyHitChance)
         {
 
             currentHeadHealth -= damage;

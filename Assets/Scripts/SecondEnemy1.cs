@@ -106,8 +106,12 @@ public class SecondEnemy : MonoBehaviour
 
         if (currentTorsoHealth <= 0)
         {
-            //Disable Visual Enemy Torso art.
-            DisablePart(13);
+            //Disable Visual Enemy Head art.
+            DisablePart(12);
+            //Disable Visual Enemy Left Arm art.
+            DisablePart(14);
+            //Disable Visual Enemy Right Arm art.
+            DisablePart(15);
         }
     }
 
@@ -116,8 +120,8 @@ public class SecondEnemy : MonoBehaviour
 
         randomNumber = Random.Range(1, 100);
 
-        //Default chance to hit head is %15.
-        if (randomNumber <= 15 + gunChanceToHit)
+        //Default chance to hit head is %5.
+        if (randomNumber <= 5 + gunChanceToHit)
         {
 
             currentHeadHealth -= damage;

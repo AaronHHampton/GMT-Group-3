@@ -35,6 +35,8 @@ public class ThirdEnemy : MonoBehaviour
 
     public TMP_Text _playerCombatLog;
 
+    public Animator _animator;
+
     [SerializeField]
     private GameObject[] partsArray;
     //private GameObject[] healthDisplayArray;
@@ -106,8 +108,11 @@ public class ThirdEnemy : MonoBehaviour
 
         if (currentTorsoHealth <= 0)
         {
-            //Disable Visual Enemy Torso art.
-            DisablePart(13);
+            //Disable Visual Enemy Head and Arm art.
+            DisablePart(12);
+            DisablePart(14);
+            DisablePart(15);
+            _animator.SetTrigger("EnemyTorsoDestroyed");
         }
     }
 
@@ -141,6 +146,7 @@ public class ThirdEnemy : MonoBehaviour
         {
             //Disable Visual Enemy Head art.
             DisablePart(12);
+            _animator.SetTrigger("EnemyHeadDestroyed");
         }
     }
 
@@ -239,6 +245,7 @@ public class ThirdEnemy : MonoBehaviour
         {
             //Disable Visual Enemy Left Arm art.
             DisablePart(14);
+            _animator.SetTrigger("EnemyLeftArmDestroyed");
         }
     }
 
@@ -272,6 +279,7 @@ public class ThirdEnemy : MonoBehaviour
         {
             //Disable Visual Enemy Right Arm art.
             DisablePart(15);
+            _animator.SetTrigger("EnemyRightArmDestroyed");
         }
     }
 

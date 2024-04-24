@@ -35,6 +35,8 @@ public class SecondEnemy : MonoBehaviour
 
     public TMP_Text _playerCombatLog;
 
+    public Animator _animator;
+
     [SerializeField]
     private GameObject[] partsArray;
     //private GameObject[] healthDisplayArray;
@@ -112,6 +114,8 @@ public class SecondEnemy : MonoBehaviour
             DisablePart(14);
             //Disable Visual Enemy Right Arm art.
             DisablePart(15);
+            
+            _animator.SetTrigger("EnemyTorsoDestroyed");
         }
     }
 
@@ -145,6 +149,7 @@ public class SecondEnemy : MonoBehaviour
         {
             //Disable Visual Enemy Head art.
             DisablePart(12);
+            _animator.SetTrigger("EnemyHeadDestroyed");
         }
     }
 
@@ -243,6 +248,7 @@ public class SecondEnemy : MonoBehaviour
         {
             //Disable Visual Enemy Left Arm art.
             DisablePart(14);
+            _animator.SetTrigger("EnemyLeftArmDestroyed");
         }
     }
 
@@ -276,6 +282,7 @@ public class SecondEnemy : MonoBehaviour
         {
             //Disable Visual Enemy Right Arm art.
             DisablePart(15);
+            _animator.SetTrigger("EnemyRightArmDestroyed");
         }
     }
 

@@ -163,7 +163,7 @@ public class GameplayHandler : MonoBehaviour
         if (sceneName == "FirstCombat")
         {
 
-            if (_enemy.currentHeadHealth <= 0 || _enemy.currentTorsoHealth <= 0 || _enemy.currentLeftLegHealth <= 0 && _enemy.currentRightLegHealth <= 0)
+            if (_enemy.currentHeadHealth <= 0 || _enemy.currentTorsoHealth <= 0 || _enemy.currentLeftLegHealth <= 0 && _enemy.currentRightLegHealth <= 0 || _enemy.currentLeftArmHealth <= 0 && _enemy.currentRightArmHealth <= 0)
             {
                 playerVictory = true;
                 _turn.text = "Victory!";
@@ -171,7 +171,7 @@ public class GameplayHandler : MonoBehaviour
                 StartCoroutine(FirstCombatVictory());
             }
 
-            if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0)
+            if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0 || player.currentLeftArmHealth <= 0 && player.currentRightArmHealth <= 0)
             {
                 playerDefeat = true;
                 _turn.text = "Defeat!";
@@ -182,7 +182,7 @@ public class GameplayHandler : MonoBehaviour
 
         if (sceneName == "SecondCombat")
         {
-            if (_secondEnemy.currentHeadHealth <= 0 || _secondEnemy.currentTorsoHealth <= 0 || _secondEnemy.currentLeftLegHealth <= 0 && _secondEnemy.currentRightLegHealth <= 0)
+            if (_secondEnemy.currentHeadHealth <= 0 || _secondEnemy.currentTorsoHealth <= 0 || _secondEnemy.currentLeftLegHealth <= 0 && _secondEnemy.currentRightLegHealth <= 0 || _secondEnemy.currentLeftArmHealth <= 0 && _secondEnemy.currentRightArmHealth <= 0)
             {
                 playerVictory = true;
                 _turn.text = "Victory!";
@@ -190,7 +190,7 @@ public class GameplayHandler : MonoBehaviour
                 StartCoroutine(SecondCombatVictory());
             }
 
-            if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0)
+            if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0 || player.currentLeftArmHealth <= 0 && player.currentRightArmHealth <= 0)
             {
                 playerDefeat = true;
                 _turn.text = "Defeat!";
@@ -201,7 +201,7 @@ public class GameplayHandler : MonoBehaviour
 
         if (sceneName == "ThirdCombat")
         {
-            if (_thirdEnemy.currentHeadHealth <= 0 || _thirdEnemy.currentTorsoHealth <= 0 || _thirdEnemy.currentLeftLegHealth <= 0 && _thirdEnemy.currentRightLegHealth <= 0)
+            if (_thirdEnemy.currentHeadHealth <= 0 || _thirdEnemy.currentTorsoHealth <= 0 || _thirdEnemy.currentLeftLegHealth <= 0 && _thirdEnemy.currentRightLegHealth <= 0 || _thirdEnemy.currentLeftArmHealth <= 0 && _thirdEnemy.currentRightArmHealth <= 0)
             {
                 playerVictory = true;
                 _turn.text = "Victory!";
@@ -209,7 +209,7 @@ public class GameplayHandler : MonoBehaviour
                 StartCoroutine(ReturnToTitle());
             }
 
-            if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0)
+            if (player.currentHeadHealth <= 0 || player.currentTorsoHealth <= 0 || player.currentLeftLegHealth <= 0 && player.currentRightLegHealth <= 0 || player.currentLeftArmHealth <= 0 && player.currentRightArmHealth <= 0)
             {
                 playerDefeat = true;
                 _turn.text = "Defeat!";

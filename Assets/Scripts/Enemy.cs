@@ -35,9 +35,14 @@ public class Enemy : MonoBehaviour
 
     public TMP_Text _playerCombatLog;
 
+    public Animator _animator;
+
     [SerializeField]
     private GameObject[] partsArray;
     //private GameObject[] healthDisplayArray;
+
+    /*[SerializeField]
+    private Animator[] animators;*/
 
     /*
     private void Awake()
@@ -55,10 +60,10 @@ public class Enemy : MonoBehaviour
         currentTorsoHealth = 17;
         torsoHealth.SetTorsoStartColor(currentTorsoHealth, maxTorsoHealth);
 
-        currentHeadHealth = 7;
+        currentHeadHealth = 6;
         headHealth.SetHeadStartColor(currentHeadHealth, maxHeadHealth);
 
-        currentLeftArmHealth = 6;
+        currentLeftArmHealth = 2;
         leftArmHealth.SetLeftArmStartColor(currentLeftArmHealth, maxLeftArmHealth);
 
         currentRightArmHealth = maxRightArmHealth;
@@ -74,7 +79,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
 
@@ -83,9 +88,9 @@ public class Enemy : MonoBehaviour
         randomNumber = Random.Range(1, 100);
 
         //Default chance to hit torso is %45.
-        if (randomNumber <= 45 + gunChanceToHit) 
+        if (randomNumber <= 45 + gunChanceToHit)
         {
-            
+
             currentTorsoHealth -= damage;
             torsoHealth.SetTorsoHealth(currentTorsoHealth, maxTorsoHealth);
             Debug.Log("Hit Torso!");
@@ -106,8 +111,11 @@ public class Enemy : MonoBehaviour
 
         if (currentTorsoHealth <= 0)
         {
-            //Disable Visual Enemy Torso art.
-            DisablePart(13);
+            //Disable Visual Enemy Head and Arm art.
+            DisablePart(12);
+            DisablePart(14);
+            DisablePart(15);
+            _animator.SetTrigger("EnemyTorsoDestroyed");
         }
     }
 
@@ -141,6 +149,8 @@ public class Enemy : MonoBehaviour
         {
             //Disable Visual Enemy Head art.
             DisablePart(12);
+            //PlayAnimation(1, "Death", EnemyHeadDestroyed);
+            _animator.SetTrigger("EnemyHeadDestroyed");
         }
     }
 
@@ -239,6 +249,7 @@ public class Enemy : MonoBehaviour
         {
             //Disable Visual Enemy Left Arm art.
             DisablePart(14);
+            _animator.SetTrigger("EnemyLeftArmDestroyed");
         }
     }
 
@@ -272,6 +283,7 @@ public class Enemy : MonoBehaviour
         {
             //Disable Visual Enemy Right Arm art.
             DisablePart(15);
+            _animator.SetTrigger("EnemyRightArmDestroyed");
         }
     }
 
@@ -286,5 +298,12 @@ public class Enemy : MonoBehaviour
         partsArray[part].SetActive(true);
         Debug.Log($"Enabled {part}");
     }
+
+    /*public void PlayAnimation(int part, string trigger, bool animation)
+    {
+        //Needs part from animator list. Trigger condition? Then animator parameter.
+        animators[part].SetBool(trigger, animation);
+
+    }*/
 
 }

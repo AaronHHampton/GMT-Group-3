@@ -93,6 +93,12 @@ public class GameplayHandler : MonoBehaviour
 
     }
 
+    IEnumerator EnemyChillsBeforeShooting()
+    {
+        yield return new WaitForSeconds(2);
+        Debug.Log("Wait to shoot");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -111,6 +117,7 @@ public class GameplayHandler : MonoBehaviour
                 randomNumber = Random.Range(1, 6);
                 if (randomNumber == 1 && player.partsArray[0].activeInHierarchy == true)
                 {
+                StartCoroutine(EnemyChillsBeforeShooting());
                     player.PlayerTakeHeadDamage(enemyWeaponDamage, enemyHitChance);
                     enemyHasShotThisTurn = true;
                     //Debug.Log("Enemy Has Shot Your Head!");
@@ -119,44 +126,49 @@ public class GameplayHandler : MonoBehaviour
                 }
                 if (randomNumber == 2 && player.partsArray[1].activeInHierarchy == true)
                 {
-                    player.PlayerTakeTorsoDamage(enemyWeaponDamage, enemyHitChance);
+                StartCoroutine(EnemyChillsBeforeShooting());
+                player.PlayerTakeTorsoDamage(enemyWeaponDamage, enemyHitChance);
                     enemyHasShotThisTurn = true;
                 //Debug.Log("Enemy Has Shot Your Torso!");
                 //_enemyCombatLog.text = "Enemy Has Shot Your Torso!";
                 //i++;
-            }
+                }
                 if (randomNumber == 3 && player.partsArray[2].activeInHierarchy == true)
                 {
-                    player.PlayerTakeLeftArmDamage(enemyWeaponDamage, enemyHitChance);
+                StartCoroutine(EnemyChillsBeforeShooting());
+                player.PlayerTakeLeftArmDamage(enemyWeaponDamage, enemyHitChance);
                     enemyHasShotThisTurn = true;
                 //Debug.Log("Enemy Has Shot Your Left Arm!");
                 //_enemyCombatLog.text = "Enemy Has Shot Your Left Arm!";
                 //i++;
-            }
+                }
                 if (randomNumber == 4 && player.partsArray[3].activeInHierarchy == true)
                 {
-                    player.PlayerTakeRightArmDamage(enemyWeaponDamage, enemyHitChance);
+                StartCoroutine(EnemyChillsBeforeShooting());
+                player.PlayerTakeRightArmDamage(enemyWeaponDamage, enemyHitChance);
                     enemyHasShotThisTurn = true;
                 //Debug.Log("Enemy Has Shot Your Right Arm!");
                 //_enemyCombatLog.text = "Enemy Has Shot Your Right Arm!";
                 //i++;
-            }
+                }
                 if (randomNumber == 5 && player.partsArray[4].activeInHierarchy == true)
                 {
-                    player.PlayerTakeLeftLegDamage(enemyWeaponDamage, enemyHitChance);
+                StartCoroutine(EnemyChillsBeforeShooting());
+                player.PlayerTakeLeftLegDamage(enemyWeaponDamage, enemyHitChance);
                     enemyHasShotThisTurn = true;
                 //Debug.Log("Enemy Has Shot Your Left Leg!");
                 //_enemyCombatLog.text = "Enemy Has Shot Your Left Leg!";
                 //i++;
-            }
+                }
                 if (randomNumber == 6 && player.partsArray[5].activeInHierarchy == true)
                 {
-                    player.PlayerTakeRightLegDamage(enemyWeaponDamage, enemyHitChance);
+                StartCoroutine(EnemyChillsBeforeShooting());
+                player.PlayerTakeRightLegDamage(enemyWeaponDamage, enemyHitChance);
                     enemyHasShotThisTurn = true;
                 //Debug.Log("Enemy Has Shot Your Right Leg!");
                 //_enemyCombatLog.text = "Enemy Has Shot Your Right Leg!";
                 //i++;
-            }
+                }
             //}
         }
 

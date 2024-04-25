@@ -79,7 +79,28 @@ public class InputHandler : MonoBehaviour
 
     IEnumerator WaitForFunction()
     {
-        yield return new WaitForSeconds(2);
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+
+        if (sceneName == "FirstCombat")
+        {
+
+        }
+
+        if (sceneName == "SecondCombat")
+        {
+
+        }
+
+        if (sceneName == "ThirdCombat")
+        {
+
+        }
+
+        yield return new WaitForSeconds(3);
         Debug.Log("Done Waiting!");
         PlayerTurn = true;
         _turn.text = "Player's Turn";

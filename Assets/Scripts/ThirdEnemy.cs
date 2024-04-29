@@ -10,12 +10,12 @@ public class ThirdEnemy : MonoBehaviour
 
     //private PlayerInventory inventory;
 
-    public int maxTorsoHealth = 20;
-    public int maxHeadHealth = 8;
-    public int maxLeftArmHealth = 10;
-    public int maxRightArmHealth = 10;
-    public int maxLeftLegHealth = 15;
-    public int maxRightLegHealth = 15;
+    public int maxTorsoHealth = 30;
+    public int maxHeadHealth = 12;
+    public int maxLeftArmHealth = 15;
+    public int maxRightArmHealth = 15;
+    public int maxLeftLegHealth = 20;
+    public int maxRightLegHealth = 20;
 
     public int currentTorsoHealth;
     public int currentHeadHealth;

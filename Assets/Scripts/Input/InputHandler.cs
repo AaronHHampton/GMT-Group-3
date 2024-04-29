@@ -161,12 +161,12 @@ public class InputHandler : MonoBehaviour
 
         if (sceneName == "ThirdCombat")
         {
-            _3rdenemyCurrentHeadHealth.text = _thirdEnemy.currentHeadHealth.ToString() + " / 8";
-            _3rdenemyCurrentTorsoHealth.text = _thirdEnemy.currentTorsoHealth.ToString() + " / 20";
-            _3rdenemyCurrentLeftArmHealth.text = _thirdEnemy.currentLeftArmHealth.ToString() + " / 10";
-            _3rdenemyCurrentRightArmHealth.text = _thirdEnemy.currentRightArmHealth.ToString() + " / 10";
-            _3rdenemyCurrentLeftLegHealth.text = _thirdEnemy.currentLeftLegHealth.ToString() + " / 15";
-            _3rdenemyCurrentRightLegHealth.text = _thirdEnemy.currentRightLegHealth.ToString() + " / 15";
+            _3rdenemyCurrentHeadHealth.text = _thirdEnemy.currentHeadHealth.ToString() + " / 12";
+            _3rdenemyCurrentTorsoHealth.text = _thirdEnemy.currentTorsoHealth.ToString() + " / 30";
+            _3rdenemyCurrentLeftArmHealth.text = _thirdEnemy.currentLeftArmHealth.ToString() + " / 15";
+            _3rdenemyCurrentRightArmHealth.text = _thirdEnemy.currentRightArmHealth.ToString() + " / 15";
+            _3rdenemyCurrentLeftLegHealth.text = _thirdEnemy.currentLeftLegHealth.ToString() + " / 20";
+            _3rdenemyCurrentRightLegHealth.text = _thirdEnemy.currentRightLegHealth.ToString() + " / 20";
         }
 
         //HoveringOver();

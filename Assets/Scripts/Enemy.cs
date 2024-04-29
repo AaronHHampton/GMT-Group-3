@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
         currentLeftArmHealth = 2;
         leftArmHealth.SetLeftArmStartColor(currentLeftArmHealth, maxLeftArmHealth);
 
-        currentRightArmHealth = maxRightArmHealth;
+        currentRightArmHealth = 6;
         rightArmHealth.SetRightArmStartColor(currentRightArmHealth, maxRightArmHealth);
 
         currentLeftLegHealth = 10;
